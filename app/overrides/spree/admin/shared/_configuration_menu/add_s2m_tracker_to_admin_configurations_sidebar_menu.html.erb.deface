@@ -1,0 +1,2 @@
+<!-- insert_bottom "[data-hook='admin_configurations_sidebar_menu']" -->
+<%= configurations_sidebar_menu_item t('spree_s2m_tag.s2m_tags'), admin_s2m_tags_path %>

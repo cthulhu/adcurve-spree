@@ -1,0 +1,23 @@
+<% if Spree::S2mTag.activated? %>
+  <!-- Shop2Market product landing script BEGIN -->
+  <script type="text/javascript">
+    try{
+      var __s2m_host_prefix = (("https:" == document.location.protocol) ? "https://" : "http://");
+      var __s2m_link = "<%= Spree::S2mTag.s2m_host %>/track_visit.js?shop_code=<%= Spree::S2mTag.s2m_shop_id %>&v=2.0.20130317";
+      var __s2m_js = document.createElement('script');
+      __s2m_js.type = 'text/javascript'; __s2m_js.async = true;
+      __s2m_js.src = __s2m_host_prefix + __s2m_link;
+      var __s2m_script = document.getElementsByTagName('script')[0];
+      __s2m_script.parentNode.insertBefore( __s2m_js, __s2m_script );
+    }
+    catch(err){}
+  </script>
+  <noscript>
+    <![if gt IE 6]>
+      <img src="//<%= Spree::S2mTag.s2m_host %>/v3/tvi.gif?shop_code=<%= Spree::S2mTag.s2m_shop_id %>&v=2.0.20130317" 
+        height="1" width="1" border="0" styles="border:0px;display:block;" />
+    <![endif]>
+  </noscript>
+  <!-- Shop2Market product landing script END -->
+
+<% end %>

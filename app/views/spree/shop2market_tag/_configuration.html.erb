@@ -1,0 +1,15 @@
+<script type="text/javascript">
+window.s2m_configuration = {};
+<% case controller.controller_name %>
+  <% when "home" %>
+    window.s2m_configuration.s2m_page = "home";
+  <% when "orders" %>
+    window.s2m_configuration.s2m_page = "cart";
+  <% when "products" %>
+    <% if controller.action_name == "index" %>
+      window.s2m_configuration.s2m_page = "category";
+    <% else %>
+      window.s2m_configuration.s2m_page = "product";
+    <% end %>
+<% end %>
+</script>

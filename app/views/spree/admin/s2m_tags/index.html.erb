@@ -1,0 +1,15 @@
+<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+
+<h1><%= t('spree.s2m_tags_configuration') %></h1>
+
+<br />
+<br />
+<% if @s2m_tag.new_record? %>
+  <%= form_for [:admin, @s2m_tag] do |f| %>
+    <%= render :partial => "form", :locals => { :f => f } %>
+  <% end %>
+<% else %>
+  <%= form_for [:admin, @s2m_tag], :method => :put do |f| %>
+    <%= render :partial => "form", :locals => { :f => f } %>
+  <% end %>
+<% end %>
