@@ -2,14 +2,14 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_s2m_tag'
-  s.version     = '1.3.2'
+  s.version     = '0.1.0'
   s.summary     = 'Shop2market tag for spree'
   s.description = 'Easy installation shop2market support for spree driven shops'
   s.required_ruby_version = '>= 1.8.7'
 
   s.author    = 'Stanislav O. Pogrebnyak'
   s.email     = 'stanislav.pogrebnyak@gmail.com'
-  # s.homepage  = 'http://www.spreecommerce.com'
+  #  s.homepage  = 'http://www.spreecommerce.com'
 
   #s.files       = `git ls-files`.split("\n")
   #s.test_files  = `git ls-files -- {test,spec,features}/*`.split("\n")
