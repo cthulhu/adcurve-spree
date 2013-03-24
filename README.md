@@ -1,21 +1,17 @@
-SpreeS2mTag
-===========
+Spree Shop2market Tag
+=====================
 
-Introduction goes here.
+Shop2market tags implementation for Spree shop engine 
 
+Installation and configuration
+==============================
 
-Example
-=======
+Add to your spree shop Gemfile
 
-Example goes here.
+    gem 'spree_s2m_import', :git => 'git://github.com/Shop2market/spree_s2m_tag.git'
 
-Testing
--------
+Run bundle install
 
-Be sure to bundle your dependencies and then create a dummy test app for the specs to run against.
+Go to admin >  Configuration > S2M Tags, fill in your shop_id and host for shop2market application( default is track.shop2market.com )
 
-    $ bundle
-    $ bundle exec rake test_app
-    $ bundle exec rspec spec
-
-Copyright (c) 2013 [name of extension creator], released under the New BSD License
+Copyright (c) 2013 Shop2market, released under the New BSD License
