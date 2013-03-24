@@ -5,11 +5,17 @@ window.s2m_configuration = {};
     window.s2m_configuration.s2m_page = "home";
   <% when "orders" %>
     window.s2m_configuration.s2m_page = "cart";
+    window.s2m_configuration.s2m_cart_items = <%= raw @order.line_items.map{|li| { 
+      :s2m_product_id => li.product.sku, :s2m_quantity => li.quantity, :s2m_amount_1 => li.display_amount.to_s, :s2m_amount_2 => li.display_amount.to_s } }.to_json %>
   <% when "products" %>
-    <% if controller.action_name == "index" %>
-      window.s2m_configuration.s2m_page = "category";
-    <% else %>
+    <% if controller.action_name != "index" %>
       window.s2m_configuration.s2m_page = "product";
-    <% end %>
+      window.s2m_configuration.s2m_product_id = <%= raw @product.sku.to_json %>
+    <% end %>  
+  <% when "taxons" %>
+      window.s2m_configuration.s2m_page = "category";
+      window.s2m_configuration.s2m_category_path = "<%= raw params[:id].split("\/")[1..-1].join(" > ") %>";
+      window.s2m_configuration.s2m_products = <%=raw @products.map{|product| { :s2m_product_id => product.sku  } }.to_json %>;
 <% end %>
 </script>
+New node
