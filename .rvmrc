@@ -1,1 +1,1 @@
-rvm use 1.9.3@spree_s2m_tag --create
+rvm use 2.1.1@spree_s2m_tag --create
