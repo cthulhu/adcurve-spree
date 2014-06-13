@@ -1,0 +1,84 @@
+<% if Spree::S2mTag.activated? %> 
+
+  <% if controller.controller_name == "orders" && controller.action_name == "show" %>
+    <!-- Begin Shop2market Order Tag -->
+    <script type="text/javascript">
+    <!--
+        function _s2m_t()
+        {
+            var s2m_shop = S2MOrderTransaction( <%= Spree::S2mTag.s2m_shop_id %>, "4.0.20140528" );
+
+            // Order information (required). Please replace the XXX values 
+            // for the appropriate data.
+
+            var orderInfo = {};
+
+            orderInfo.trans_id     = "<%= @order.number %>"; // required, unique string with order or lead identifier (required)
+            orderInfo.trans_type   = "order"; // string: Type of the transaction like Lead, Order, Pre-order, etc (optional)
+            orderInfo.amount_1     = "<%= @order.total - @order.tax_total %>"; // string: order amount plus tax minus shipping costs in cents (required)
+            orderInfo.amount_2     = "<%= @order.total %>"; // string: order amount minus tax minus shipping costs in cents (required)
+            orderInfo.amount_3     = "<%= @order.ship_total %>"; // string: shipping amount plus tax in cents (required) 
+            orderInfo.customer_id  = "<%= @order.user_id %>"; // string: customer id (optional)
+            orderInfo.new_customer = false; // string: type of customer: 1=new, 0-=existing (optional)
+            orderInfo.coupon_code  = ""; // string: used coupon code (optional)
+
+            s2m_shop.set_order_info( orderInfo );
+
+            <% @order.line_items.each do |line_item| %>
+              // Ordered items tracking. Replace the XXX values for the 
+              // appropriate data. For each item call:
+              var itemInfo1 = {}
+              itemInfo1.trans_id      = "<%= @order.number %>"; // unique string with order or lead identifier (required)
+              itemInfo1.item_id       = "<%= line_item.product.sku %>"; // product id (in s2m this is the unique product_id or article number) (required)
+              itemInfo1.item_info_1   = "<%= line_item.product.name %>"; // ordered product name (required)                                  
+              itemInfo1.item_amount_1 = "<%= line_item.product.price + @order.tax_total %>"; // current selling price with tax in cents (required)
+              itemInfo1.item_amount_2 = "<%= line_item.product.price %>"; // current selling price exluding tax in cents (required)
+              itemInfo1.quantity      = "<%= line_item.quantity %>"; // quantity of ordered products (required)
+              s2m_shop.add_item_info( itemInfo1 );
+            <% end %>
+
+            // User information (optional). 
+            // Please replace the example values for the appropriate data or remove
+            // the section
+            var userInfo = {};
+            userInfo.city            = "<%= @order.bill_address.city %>";
+            userInfo.address         = "<%= @order.bill_address.address1 %>";
+            userInfo.postal_code     = "<%= @order.bill_address.zipcode %>";
+            userInfo.country         = "<%= @order.bill_address.country %>";
+            userInfo.user_first_name = "<%= @order.bill_address.firstname %>";
+            userInfo.user_last_name  = "<%= @order.bill_address.lastname %>";
+            userInfo.user_email      = "<%= @order.email %>";
+
+            s2m_shop.set_user_info( userInfo );
+
+            // Process the order information - DON'T EDIT THIS FUNCTION or ANY FUNCTIONS BELOW
+            s2m_shop.transact();
+       }
+
+       try{
+          var __s2m_host = "<%= Spree::S2mTag.s2m_host %>";
+          var __s2m_js = document.createElement('script');
+          __s2m_js.type = 'text/javascript'; __s2m_js.async = true;
+          __s2m_js.src = (("https:" == document.location.protocol) ? "https://" : "http://") + __s2m_host + "/javascripts/s2m.js";
+          __s2m_js.onload = _s2m_t;
+          __s2m_js.onreadystatechange = function () {
+            if (this.readyState == 'complete'|| this.readyState == 'loaded') _s2m_t();
+          }
+          var __s2m_script = document.getElementsByTagName('script')[0];
+          __s2m_script.parentNode.insertBefore( __s2m_js, __s2m_script );
+        }catch(err){}
+    -->
+    </script>
+    <noscript>
+      <!-- TODO: finish -->
+      <!-- Start Shop2market backup Image tag - Please edit "XXX" to the appropriate data --> 
+      <img src="//<%= Spree::S2mTag.s2m_host %>/toi.gif?shop_code=<%= Spree::S2mTag.s2m_shop_id %>&v=4.0.20140528&trans_id=<%= @order.number %>&trans_type=order&amount_1=XXX&amount_2=XXX&amount_3=XXX&customer_id=XXX&new_customer=XXX&coupon_code=XXX&oi[][trans_id]=XXX&oi[][item_id]=XXX&oi[][item_info_1]=XXX&oi[][item_amount_1]=XXX&oi[][item_amount_2]=XXX&oi[][quantity]=XXX    // add this line for each product: &oi[][trans_id]=XXX&oi[][item_id]=XXX&oi[][item_info_1]=XXX&oi[][item_amount_1]=XXX&oi[][item_amount_2]=XXX&oi[][quantity]=XXX" alt="shop2market tracker pixel" />
+      <!-- End Shop2market backup Image tag -->
+    </noscript>
+    <!-- End Shop2market Order Tag -->
+
+    <!-- Copy code below per extra product at the end of the img tag 
+    &oi[][trans_id]=XXX&oi[][item_id]=XXX&oi[][item_info_1]=XXX&oi[][item_amount_1]=XXX&oi[][item_amount_2]=XXX&oi[][quantity]=XXX 
+    -->
+  <% end %>
+<% end %>
