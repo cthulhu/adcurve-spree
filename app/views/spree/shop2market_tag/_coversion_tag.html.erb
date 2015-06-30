@@ -31,8 +31,8 @@
               itemInfo1.trans_id      = "<%= @order.number %>"; // unique string with order or lead identifier (required)
               itemInfo1.item_id       = "<%= line_item.product.sku %>"; // product id (in s2m this is the unique product_id or article number) (required)
               itemInfo1.item_info_1   = "<%= line_item.product.name %>"; // ordered product name (required)
-              itemInfo1.item_amount_1 = "<%= line_item.product.price + @order.tax_total %>"; // current selling price with tax in cents (required)
-              itemInfo1.item_amount_2 = "<%= line_item.product.price %>"; // current selling price exluding tax in cents (required)
+              itemInfo1.item_amount_1 = "<%= line_item.product.price %>"; // current selling price with tax in cents (required)
+              itemInfo1.item_amount_2 = "<%= line_item.product.price - @order.tax_total %>"; // current selling price exluding tax in cents (required)
               itemInfo1.quantity      = "<%= line_item.quantity %>"; // quantity of ordered products (required)
               s2m_shop.add_item_info( itemInfo1 );
             <% end %>
