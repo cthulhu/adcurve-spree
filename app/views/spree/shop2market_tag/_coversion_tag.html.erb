@@ -15,8 +15,8 @@
 
             orderInfo.trans_id     = "<%= @order.number %>"; // required, unique string with order or lead identifier (required)
             orderInfo.trans_type   = "order"; // string: Type of the transaction like Lead, Order, Pre-order, etc (optional)
-            orderInfo.amount_1     = "<%= @order.total - @order.tax_total %>"; // string: order amount plus tax minus shipping costs in cents (required)
-            orderInfo.amount_2     = "<%= @order.total %>"; // string: order amount minus tax minus shipping costs in cents (required)
+            orderInfo.amount_1     = "<%= @order.total - @order.ship_total %>"; // string: order amount plus tax minus shipping costs in cents (required)
+            orderInfo.amount_2     = "<%= ( @order.total - @order.ship_total ) / 1.21 %>"; // string: order amount minus tax minus shipping costs in cents (required)
             orderInfo.amount_3     = "<%= @order.ship_total %>"; // string: shipping amount plus tax in cents (required)
             orderInfo.customer_id  = "<%= @order.user_id %>"; // string: customer id (optional)
             orderInfo.new_customer = false; // string: type of customer: 1=new, 0-=existing (optional)
@@ -32,7 +32,7 @@
               itemInfo1.item_id       = "<%= line_item.product.sku %>"; // product id (in s2m this is the unique product_id or article number) (required)
               itemInfo1.item_info_1   = "<%= line_item.product.name %>"; // ordered product name (required)
               itemInfo1.item_amount_1 = "<%= line_item.product.price %>"; // current selling price with tax in cents (required)
-              itemInfo1.item_amount_2 = "<%= line_item.product.price - @order.tax_total %>"; // current selling price exluding tax in cents (required)
+              itemInfo1.item_amount_2 = "<%= line_item.product.price / ( 1.21 ) %>"; // current selling price exluding tax in cents (required)
               itemInfo1.quantity      = "<%= line_item.quantity %>"; // quantity of ordered products (required)
               s2m_shop.add_item_info( itemInfo1 );
             <% end %>
