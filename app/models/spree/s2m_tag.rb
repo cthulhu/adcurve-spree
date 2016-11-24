@@ -1,5 +1,5 @@
 class Spree::S2mTag < ActiveRecord::Base
-  attr_accessible :s2m_host, :s2m_shop_id
+  #attr_accessible :s2m_host, :s2m_shop_id
 
   def self.activated?
     first.present?
