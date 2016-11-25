@@ -4,6 +4,7 @@ class CreateSpreeS2mTags < ActiveRecord::Migration
       t.text :s2m_host
       t.integer :s2m_shop_id
       t.timestamps
+      t.text :api_key
     end
   end
 end
