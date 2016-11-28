@@ -1,4 +1,4 @@
-module SpreeadcurveTag
+module SpreeAdcurveTag
   module Generators
     class InstallGenerator < Rails::Generators::Base
 
