@@ -1,1 +1,1 @@
-rvm use 2.1.6@spree_s2m_tag --create
+rvm use 2.1.6@spree_adcurve_tag --create

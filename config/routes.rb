@@ -1,5 +1,5 @@
 Spree::Core::Engine.routes.draw do
   namespace :admin do
-    resources :s2m_tags
+    resources :adcurve_tags
   end
 end

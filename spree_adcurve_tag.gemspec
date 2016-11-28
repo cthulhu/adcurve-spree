@@ -1,7 +1,7 @@
 # encoding: UTF-8
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
-  s.name        = 'spree_s2m_tag'
+  s.name        = 'spree_adcurve_tag'
   s.version     = '3.1.0'
   s.summary     = 'Shop2market tag for spree'
   s.description = 'Easy installation shop2market support for spree driven shops'
