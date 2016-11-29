@@ -1,7 +1,8 @@
-Spree Shop2market Tag
+Adcurve_spree
+[![Gem Version](https://badge.fury.io/rb/adcurve_spree.svg)](https://badge.fury.io/rb/adcurve_spree)
 =====================
 
-Shop2market tags implementation for Spree shop engine 
+Adcurve_spreee tags implementation for Spree shop engine
 
 Installation and configuration
 ==============================
