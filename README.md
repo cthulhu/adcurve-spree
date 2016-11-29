@@ -1,18 +1,21 @@
 
-Adcurve_Spree [![Gem Version](https://badge.fury.io/rb/adcurve_spree.svg)](https://badge.fury.io/rb/adcurve_spree)
+Adcurve Spree Integration Plugin
+--------------------------------
+
+[![Gem Version](https://badge.fury.io/rb/adcurve_spree.svg)](https://badge.fury.io/rb/adcurve_spree)
  [![Code Climate](https://codeclimate.com/github/cthulhu/adcurve-spree/badges/gpa.svg)](https://codeclimate.com/github/cthulhu/adcurve-spree)
-=====================
 
-Adcurve tags implementation for Spree shop engine
-
-Installation and configuration
-==============================
+Installation
+============
 
 Add to your spree shop Gemfile
 
-    gem 'adcurve_spree', :git => 'git://github.com/cthulhu/adcurve-spree.git'
+    gem 'adcurve_spree'
 
 Run bundle install
+
+Configuration
+=============
 
 Go to admin >  Configuration > adcurve Tags, fill in your shop_id,  host and API key for adcurve application( default is track.shop2market.com )
 
