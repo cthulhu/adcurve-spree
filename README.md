@@ -1,14 +1,14 @@
 Spree Shop2market Tag
 =====================
 
-Shop2market tags implementation for Spree shop engine 
+Adcurve implementation for Spree shop engine
 
 Installation and configuration
 ==============================
 
 Add to your spree shop Gemfile
 
-    gem 'spree_adcurve_import', :git => 'git://github.com/Shop2market/spree_adcurve_tag.git'
+    gem 'adcurve_spree', :git => 'git://github.com/Shop2market/adcurve-spree.git
 
 Run bundle install
 

@@ -10,6 +10,6 @@ require 'spec_helper'
 #     end
 #   end
 # end
-describe Spree::Admin::adcurveTagsHelper do
+describe Spree::Admin::AdcurveTagsHelper do
   pending "add some examples to (or delete) #{__FILE__}"
 end

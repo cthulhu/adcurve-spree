@@ -3,17 +3,17 @@ module SpreeAdcurveTag
     class InstallGenerator < Rails::Generators::Base
 
       def add_javascripts
-        append_file 'vendor/assets/javascripts/spree/frontend/all.js', "//= require store/spree_adcurve_tag\n"
+        append_file 'vendor/assets/javascripts/spree/frontend/all.js', "//= require store/adcurve_spree\n"
 
       end
 
       def add_stylesheets
-        inject_into_file 'vendor/assets/stylesheets/spree/frontend/all.css', " *= require store/spree_adcurve_tag\n", :before => /\*\//, :verbose => true
-        inject_into_file 'vendor/assets/stylesheets/spree/backend/all.css', " *= require admin/spree_adcurve_tag\n", :before => /\*\//, :verbose => true
+        inject_into_file 'vendor/assets/stylesheets/spree/frontend/all.css', " *= require store/adcurve_spree\n", :before => /\*\//, :verbose => true
+        inject_into_file 'vendor/assets/stylesheets/spree/backend/all.css', " *= require admin/adcurve_spree\n", :before => /\*\//, :verbose => true
       end
 
       def add_migrations
-        run 'bundle exec rake railties:install:migrations FROM=spree_adcurve_tag'
+        run 'bundle exec rake railties:install:migrations FROM=adcurve_spree'
       end
 
       def run_migrations

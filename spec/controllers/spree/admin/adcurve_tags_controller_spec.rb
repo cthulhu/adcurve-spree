@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe Spree::Admin::adcurveTagsController do
+describe Spree::Admin::AdcurveTagsController do
 
 end
