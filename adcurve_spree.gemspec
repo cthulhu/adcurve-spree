@@ -2,18 +2,18 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'adcurve_spree'
-  s.version     = '3.1.0'
+  s.version     = '0.0.5'
   s.summary     = 'Shop2market tag for spree'
   s.description = 'Easy installation shop2market support for spree driven shops'
   s.required_ruby_version = '>= 2.1.6'
 
   s.author    = 'Stanislav O. Pogrebnyak'
   s.email     = 'stanislav.pogrebnyak@gmail.com'
-  #  s.homepage  = 'http://www.spreecommerce.com'
+  s.homepage  = 'http://adcurve.com'
 
-  #s.files       = `git ls-files`.split("\n")
-  #s.test_files  = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.require_path = 'lib'
+  s.files        = `git ls-files`.split($/)
+  s.test_files    = s.files.grep(%r{^(test|spec|features)/})
+  s.require_path = "lib"
   s.requirements << 'none'
 
   s.add_dependency 'spree_core', '>= 3.1.0', '< 4.0'

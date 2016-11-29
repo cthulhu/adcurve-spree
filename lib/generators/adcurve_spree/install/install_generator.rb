@@ -1,4 +1,4 @@
-module SpreeAdcurveTag
+module AdcurveSpree
   module Generators
     class InstallGenerator < Rails::Generators::Base
 
