@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'adcurve_spree'
-  s.version     = '0.0.3'
+  s.version     = '0.0.4'
   s.summary     = 'Shop2market tag for spree'
   s.description = 'Easy installation shop2market support for spree driven shops'
   s.required_ruby_version = '>= 2.1.6'
