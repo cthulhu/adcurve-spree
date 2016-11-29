@@ -1,6 +1,9 @@
 Adcurve_spree
+-------------------------
+
 [![Gem Version](https://badge.fury.io/rb/adcurve_spree.svg)](https://badge.fury.io/rb/adcurve_spree)
-=====================
+ [![Code Climate](https://codeclimate.com/github/cthulhu/adcurve-spree/badges/gpa.svg)](https://codeclimate.com/github/cthulhu/adcurve-spree)
+
 
 Adcurve_spreee tags implementation for Spree shop engine
 
