@@ -2,7 +2,7 @@ module SpreeadcurveTag
   class Engine < Rails::Engine
     require 'spree/core'
     isolate_namespace Spree
-    engine_name 'spree_adcurve_tag'
+    engine_name 'adcurve_spree'
 
     config.autoload_paths += %W(#{config.root}/lib)
 

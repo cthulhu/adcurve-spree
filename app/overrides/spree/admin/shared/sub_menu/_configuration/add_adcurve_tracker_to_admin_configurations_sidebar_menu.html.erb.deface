@@ -1,2 +1,2 @@
 <!-- insert_bottom "[data-hook='admin_configurations_sidebar_menu']" -->
-<%= configurations_sidebar_menu_item t('spree_adcurve_tag.adcurve_tags'), admin_adcurve_tags_path %>
+<%= configurations_sidebar_menu_item t('adcurve_spree.adcurve_tags'), admin_adcurve_tags_path %>

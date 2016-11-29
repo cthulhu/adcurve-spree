@@ -8,7 +8,7 @@ Installation and configuration
 
 Add to your spree shop Gemfile
 
-    gem 'spree_adcurve_import', :git => 'git://github.com/Shop2market/spree_adcurve_tag.git'
+    gem 'spree_adcurve_import', :git => 'git://github.com/Shop2market/adcurve_spree.git'
 
 Run bundle install
 
