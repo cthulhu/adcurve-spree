@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'adcurve_spree'
-  s.version     = '0.0.6'
+  s.version     = '0.0.7'
   s.summary     = 'Adcurve Spree Integration plugin'
   s.description = 'Easy install adcurve support in to your spree ecommerce site'
   s.required_ruby_version = '>= 2.1.6'
