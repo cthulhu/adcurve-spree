@@ -4,6 +4,7 @@ Adcurve Spree Integration Plugin
 
 [![Gem Version](https://badge.fury.io/rb/adcurve_spree.svg)](https://badge.fury.io/rb/adcurve_spree)
  [![Code Climate](https://codeclimate.com/github/cthulhu/adcurve-spree/badges/gpa.svg)](https://codeclimate.com/github/cthulhu/adcurve-spree)
+ [![Build Status](https://travis-ci.org/cthulhu/adcurve-spree.svg?branch=master)](https://travis-ci.org/cthulhu/adcurve-spree)
 
 Installation
 ============
