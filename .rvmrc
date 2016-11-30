@@ -1,1 +1,1 @@
-rvm use 2.1.6@adcurve_spree --create
+rvm use 2.3.1@adcurve_spree --create
