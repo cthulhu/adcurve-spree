@@ -1,5 +1,7 @@
 class Spree::AdcurveTag < ActiveRecord::Base
+validates :adcurve_host, :adcurve_shop_id, :api_key, presence: true
   #attr_accessible :adcurve_host, :adcurve_shop_id
+
 
   def self.activated?
     first.present?

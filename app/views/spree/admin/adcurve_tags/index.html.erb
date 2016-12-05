@@ -6,8 +6,13 @@
   <%= form_for [:admin, @adcurve_tag] do |f| %>
     <%= render :partial => "form", :locals => { :f => f } %>
   <% end %>
+
 <% else %>
   <%= form_for [:admin, @adcurve_tag], :method => :put do |f| %>
     <%= render :partial => "form", :locals => { :f => f } %>
+  <% end %>
+  <br />
+  <% if @adcurve_tag.api_key.present? %>
+    <%= submit_tag 'Test Conection', :name => 'test conection' %>
   <% end %>
 <% end %>
