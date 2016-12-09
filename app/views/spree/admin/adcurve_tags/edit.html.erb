@@ -5,4 +5,9 @@
        <li><%= message %></li>
      <% end %>
    </ul>
- <% end %>
+<% end %>
+
+
+<%= form_for [:admin, @adcurve_tag] do |f| %>
+  <%= render :partial => "form", :locals => { :f => f } %>
+<% end %>

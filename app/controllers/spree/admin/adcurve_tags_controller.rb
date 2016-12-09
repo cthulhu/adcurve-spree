@@ -7,4 +7,7 @@ class Spree::Admin::AdcurveTagsController < Spree::Admin::ResourceController
   def new
   end
 
+  def edit
+    @adcurve_tag = Spree::AdcurveTag.first
+  end
 end
