@@ -13,6 +13,8 @@
   <% end %>
   <br />
   <% if @adcurve_tag.api_key.present? %>
-    <%= submit_tag 'Test Conection', :name => 'test conection' %>
+  <%= button_to "Create", { action: "create" }, remote: true, form: { "data-type" => "json" } %>
+  <%= @response %>
   <% end %>
+  <div id="test_connection" style="display:none;"></div>
 <% end %>
