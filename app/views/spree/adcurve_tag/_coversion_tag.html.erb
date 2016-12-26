@@ -15,9 +15,9 @@
 
             orderInfo.trans_id     = "<%= @order.number %>"; // required, unique string with order or lead identifier (required)
             orderInfo.trans_type   = "order"; // string: Type of the transaction like Lead, Order, Pre-order, etc (optional)
-            orderInfo.amount_1     = "<%= @order.total - @order.ship_total - 10 %>"; // string: order amount plus tax minus shipping costs in cents (required)
-            orderInfo.amount_2     = "<%= ( @order.total - @order.ship_total - 10 ) / 1.21 %>"; // string: order amount minus tax minus shipping costs in cents (required)
-            orderInfo.amount_3     = "<%= @order.ship_total %>"; // string: shipping amount plus tax in cents (required)
+            orderInfo.amount_1     = "<%= @order.total - @order.shipment_total %>"; // string: order amount plus tax minus shipping costs in cents (required)
+            orderInfo.amount_2     = "<%=  @order.total - @order.shipment_total - @order.additional_tax_total %>"; // string: order amount minus tax minus shipping costs in cents (required)
+            orderInfo.amount_3     = "<%= @order.shipment_total +  @order.additional_tax_total %>"; // string: shipping amount plus tax in cents (required)
             orderInfo.customer_id  = "<%= @order.user_id %>"; // string: customer id (optional)
             orderInfo.new_customer = false; // string: type of customer: 1=new, 0-=existing (optional)
             orderInfo.coupon_code  = ""; // string: used coupon code (optional)
