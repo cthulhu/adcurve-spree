@@ -13,7 +13,7 @@
     <% end %>
     <br />
     <% if @adcurve_tag.api_key.present? %>
-      <%= submit_tag 'Test Conection', :name => 'test conection', :class => 'btn btn-primary' %>
+      <%= link_to 'Test Conection', controller: "adcurve_tags", action: "test_conection", :name => 'test conection', :class => 'btn btn-primary', remote: true %>
     <% end %>
   <% end %>
 </div>

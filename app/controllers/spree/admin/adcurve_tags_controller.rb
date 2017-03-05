@@ -10,4 +10,8 @@ class Spree::Admin::AdcurveTagsController < Spree::Admin::ResourceController
   def edit
     @adcurve_tag = Spree::AdcurveTag.first
   end
+
+  def test_conection
+    @success = false
+  end
 end
