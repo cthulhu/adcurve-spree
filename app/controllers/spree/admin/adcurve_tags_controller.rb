@@ -1,4 +1,5 @@
 class Spree::Admin::AdcurveTagsController < Spree::Admin::ResourceController
+require 'rest-client'
 
   def index
     @adcurve_tag = Spree::AdcurveTag.first || Spree::AdcurveTag.new
@@ -12,6 +13,7 @@ class Spree::Admin::AdcurveTagsController < Spree::Admin::ResourceController
   end
 
   def test_conection
-    @success = false
+    @shop_json = RestClient.get("https://demo.shop2market.com/api/v1/shops.json", {"X-Api-Key" =>Spree::AdcurveTag.api_key})
+    @shop = JSON.parse(@shop_json)
   end
 end

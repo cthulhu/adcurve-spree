@@ -15,4 +15,8 @@ validates :adcurve_host, :adcurve_shop_id, :api_key, presence: true
     first.adcurve_shop_id
   end
 
+  def self.api_key
+    first.api_key
+  end
+
 end

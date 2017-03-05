@@ -12,8 +12,9 @@
       <%= render :partial => "form", :locals => { :f => f } %>
     <% end %>
     <br />
-    <% if @adcurve_tag.api_key.present? %>
-      <%= link_to 'Test Conection', controller: "adcurve_tags", action: "test_conection", :name => 'test conection', :class => 'btn btn-primary', remote: true %>
-    <% end %>
+  <% end %>
+
+  <% if @adcurve_tag.api_key.present? %>
+    <%= link_to 'Test Conection', {controller: "adcurve_tags", action: "test_conection"}, :name => 'test conection', :class => 'btn btn-primary', remote: true %>
   <% end %>
 </div>
