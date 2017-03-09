@@ -13,7 +13,7 @@ require 'rest-client'
   end
 
   def test_conection
-    @shop_json = RestClient.get("https://demo.shop2market.com/api/v1/shops.json", {"X-Api-Key" =>Spree::AdcurveTag.api_key})
+    @shop_json = RestClient.get("https://demo.shop2market.com/api/v1/shops/#{Spree::AdcurveTag.adcurve_shop_id]}/.json", {"X-Api-Key" =>Spree::AdcurveTag.api_key})
     @shop = JSON.parse(@shop_json)
   end
 end
